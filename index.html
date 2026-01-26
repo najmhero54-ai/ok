@@ -3,120 +3,174 @@
 <head>
 <meta charset="UTF-8">
 <title>PRIME – Plateforme Médicale</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{
-    font-family:"Segoe UI",Arial,sans-serif;
-    background:#f4f7fb;
-    margin:0;
-    color:#1f2937;
+/* ===== Body ===== */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
 }
-/* Header */
-header{
-    background:linear-gradient(90deg,#0f4c75,#3282b8);
-    color:white;
-    text-align:center;
-    padding:45px 20px;
-    position:relative;
+
+/* ===== Header ===== */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 250px;
+    background: linear-gradient(90deg,#0f4c75,#3282b8);
+    color: white;
+    text-align: center;
+    position: relative;
+    padding: 40px 20px;
 }
-header img.avatar{
-    position:absolute;
-    top:15px;
-    right:15px;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    border:2px solid white;
+
+/* Header texte */
+header h1 {
+    font-size: 2.8em;
+    font-weight: bold;
+    margin: 0;
 }
-/* Navigation */
-nav{
-    background:#1b262c;
-    padding:12px 20px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:100;
+
+/* Avatar */
+header img.avatar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid white;
 }
-nav a{
-    color:#e0f2fe;
-    text-decoration:none;
-    margin:0 15px;
-    font-weight:600;
+
+/* ===== Navigation ===== */
+nav {
+    background: #1b262c;
+    padding: 12px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
-nav a:hover{
-    color:#ffffff;
-    text-decoration:underline;
+
+nav a {
+    color: #e0f2fe;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
 }
-/* Container */
-.container{
-    width:90%;
-    max-width:1050px;
-    margin:35px auto;
+
+nav a:hover {
+    color: #ffffff;
+    text-decoration: underline;
 }
-/* Main boxes */
-.box{
-    background:white;
-    padding:28px;
-    margin-bottom:25px;
-    border-radius:14px;
-    cursor:pointer;
-    box-shadow:0 6px 18px rgba(0,0,0,0.12);
-    transition:0.3s;
-    font-size:1.15em;
-    font-weight:600;
+
+/* ===== Container ===== */
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: 40px auto;
 }
-.box:hover{
-    background:#eef6ff;
+
+/* ===== Boxes ===== */
+.box {
+    background: white;
+    padding: 28px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: 0.3s;
+    font-size: 1.2em;
+    font-weight: 600;
 }
+
+.box:hover {
+    background: #eef6ff;
+}
+
 /* Hidden content */
-.content{
-    display:none;
-    background:#ffffff;
-    padding:18px 22px;
-    margin-top:15px;
-    border-radius:10px;
-    line-height:1.7;
-    font-weight:400;
+.content {
+    display: none;
+    background: #ffffff;
+    padding: 18px 22px;
+    margin-top: 15px;
+    border-radius: 10px;
+    line-height: 1.7;
+    font-weight: 400;
 }
+
 /* Themes grid */
-.themes{
-    display:flex;
-    flex-wrap:wrap;
-    gap:22px;
+.themes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    justify-content: flex-start;
 }
+
 /* Theme cards */
-.theme-card{
-    width:190px;
-    background:#ffffff;
-    border-radius:14px;
-    overflow:hidden;
-    cursor:pointer;
-    box-shadow:0 3px 10px rgba(0,0,0,0.12);
-    transition:0.3s;
+.theme-card {
+    width: 190px;
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    transition: 0.3s;
 }
-.theme-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 8px 20px rgba(0,0,0,0.18);
+
+.theme-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
 }
-.theme-card img{
-    width:100%;
-    height:120px;
-    object-fit:cover;
+
+.theme-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
 }
-.theme-title{
-    padding:12px;
-    text-align:center;
-    font-weight:600;
-    background:#f1f5f9;
+
+.theme-title {
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+    background: #f1f5f9;
 }
+
 /* Footer */
-footer{
-    text-align:center;
-    padding:25px;
-    background:#1b262c;
-    color:#cbd5e1;
-    margin-top:50px;
-    font-size:0.95em;
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #1b262c;
+    color: #cbd5e1;
+    margin-top: 50px;
+    font-size: 0.95em;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+        padding: 0 10px;
+    }
+    header img.avatar {
+        width: 50px;
+        height: 50px;
+        top: 10px;
+        right: 10px;
+    }
+    .container {
+        width: 95%;
+        margin: 20px auto;
+    }
+    .theme-card {
+        width: 45%;
+    }
 }
 </style>
 
@@ -126,13 +180,12 @@ function toggle(id){
     el.style.display = (el.style.display === "block") ? "none" : "block";
 }
 </script>
-
 </head>
 
 <body>
 
 <header>
-Plateforme des Recherches et Initiatives Médicales (PRIME)
+<h1>Bienvenue sur PRIME – Plateforme des Recherches et Initiatives Médicales</h1>
 <img src="avatar.jpg" class="avatar" alt="Mon avatar">
 </header>
 
@@ -149,19 +202,21 @@ Plateforme des Recherches et Initiatives Médicales (PRIME)
 <div class="box" id="avant" onclick="toggle('contentAvant')">
 Avant-propos
 <div class="content" id="contentAvant">
-<p>PRIME est une plateforme académique et scientifique dédiée à la diffusion du savoir médical, à la recherche universitaire et au renforcement des compétences des étudiants en sciences de la santé.</p>
-<p>Elle repose sur les valeurs de rigueur scientifique, de collaboration, de solidarité académique et d’engagement pour l’amélioration continue de la formation médicale.</p>
+<p>
+PRIME est une plateforme académique et scientifique dédiée à la diffusion du savoir médical et à la recherche universitaire.  
+Elle encourage le partage et l’entraide entre étudiants et professionnels de santé.
+</p>
 </div>
 </div>
 
 <!-- OBJECTIFS -->
 <div class="box" id="objectifs" onclick="toggle('contentObjectifs')">
-Objectifs de la plateforme PRIME
+Objectifs
 <div class="content" id="contentObjectifs">
 <ul>
 <li>Renforcer la compréhension des bases anatomiques et physiologiques</li>
 <li>Encourager la recherche médicale et la réflexion scientifique</li>
-<li>Faciliter le partage de connaissances fiables et structurées</li>
+<li>Partager des connaissances fiables et structurées</li>
 <li>Développer l’esprit critique et l’initiative académique</li>
 <li>Créer un espace collaboratif entre étudiants et futurs professionnels</li>
 </ul>
@@ -172,54 +227,54 @@ Objectifs de la plateforme PRIME
 <div class="box" id="themes" onclick="toggle('contentThemes')">
 Nos Thèmes
 <div class="content" id="contentThemes">
-
 <div class="themes">
 
-<a href="poumons.html" class="theme-card">
-<img src="poumons.jpg">
+<div class="theme-card" onclick="location.href='poumons.html'">
+<img src="poumons.jpg" alt="Poumons">
 <div class="theme-title">Poumons</div>
-</a>
-
-<a href="coeur.html" class="theme-card">
-<img src="coeur.jpg">
-<div class="theme-title">Cœur</div>
-</a>
-
-<a href="cerveau.html" class="theme-card">
-<img src="cerveau.jpg">
-<div class="theme-title">Cerveau</div>
-</a>
-
-<a href="estomac.html" class="theme-card">
-<img src="estomac.jpg">
-<div class="theme-title">Estomac</div>
-</a>
-
-<a href="foie.html" class="theme-card">
-<img src="foie.jpg">
-<div class="theme-title">Foie</div>
-</a>
-
-<a href="rate.html" class="theme-card">
-<img src="rate.jpg">
-<div class="theme-title">Rate</div>
-</a>
-
-<a href="pancreas.html" class="theme-card">
-<img src="pancreas.jpg">
-<div class="theme-title">Pancréas</div>
-</a>
-
 </div>
 
+<div class="theme-card" onclick="location.href='coeur.html'">
+<img src="coeur.jpg" alt="Cœur">
+<div class="theme-title">Cœur</div>
+</div>
+
+<div class="theme-card" onclick="location.href='cerveau.html'">
+<img src="cerveau.jpg" alt="Cerveau">
+<div class="theme-title">Cerveau</div>
+</div>
+
+<div class="theme-card" onclick="location.href='estomac.html'">
+<img src="estomac.jpg" alt="Estomac">
+<div class="theme-title">Estomac</div>
+</div>
+
+<div class="theme-card" onclick="location.href='foie.html'">
+<img src="foie.jpg" alt="Foie">
+<div class="theme-title">Foie</div>
+</div>
+
+<div class="theme-card" onclick="location.href='rate.html'">
+<img src="rate.jpg" alt="Rate">
+<div class="theme-title">Rate</div>
+</div>
+
+<div class="theme-card" onclick="location.href='pancreas.html'">
+<img src="pancreas.jpg" alt="Pancréas">
+<div class="theme-title">Pancréas</div>
+</div>
+
+</div>
 </div>
 </div>
 
 <!-- MEMBRES -->
 <div class="box" id="membres" onclick="toggle('contentMembres')">
-Les principaux membres
+Membres
 <div class="content" id="contentMembres">
-<p>PRIME est portée par un groupe d’étudiants engagés, motivés par la recherche médicale et le partage des connaissances :</p>
+<p>
+PRIME est portée par un groupe d’étudiants motivés par la recherche médicale et le partage des connaissances :
+</p>
 <p>
 Annadif Ahmat Aboubakar – EM3<br>
 Ousman Mahamat Albachir – EM3<br>
@@ -229,7 +284,6 @@ Mahmoud Zakaria – EM3<br>
 Mahamat Abdaraman Bachir – EM3<br>
 Bechir Mahamat Ankri – EM3
 </p>
-<p>Ces membres contribuent activement au développement et à la crédibilité scientifique de la plateforme.</p>
 </div>
 </div>
 
