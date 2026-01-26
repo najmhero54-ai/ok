@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>PRIME – Plateforme Médicale</title>
+
 <style>
 body{
     font-family:"Segoe UI",Arial,sans-serif;
@@ -10,8 +11,7 @@ body{
     margin:0;
     color:#1f2937;
 }
-
-/* Header avec avatar */
+/* Header */
 header{
     background:linear-gradient(90deg,#0f4c75,#3282b8);
     color:white;
@@ -28,7 +28,6 @@ header img.avatar{
     border-radius:50%;
     border:2px solid white;
 }
-
 /* Navigation */
 nav{
     background:#1b262c;
@@ -48,15 +47,13 @@ nav a:hover{
     color:#ffffff;
     text-decoration:underline;
 }
-
 /* Container */
 .container{
     width:90%;
     max-width:1050px;
     margin:35px auto;
 }
-
-/* Triangles / Boxes */
+/* Main boxes */
 .box{
     background:white;
     padding:28px;
@@ -71,8 +68,7 @@ nav a:hover{
 .box:hover{
     background:#eef6ff;
 }
-
-/* Contenu caché */
+/* Hidden content */
 .content{
     display:none;
     background:#ffffff;
@@ -82,13 +78,13 @@ nav a:hover{
     line-height:1.7;
     font-weight:400;
 }
-
-/* Thèmes mini-cartes */
+/* Themes grid */
 .themes{
     display:flex;
     flex-wrap:wrap;
     gap:22px;
 }
+/* Theme cards */
 .theme-card{
     width:190px;
     background:#ffffff;
@@ -97,19 +93,22 @@ nav a:hover{
     cursor:pointer;
     box-shadow:0 3px 10px rgba(0,0,0,0.12);
     transition:0.3s;
-    text-align:center;
-    font-weight:600;
+}
+.theme-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.18);
 }
 .theme-card img{
     width:100%;
     height:120px;
     object-fit:cover;
 }
-.theme-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 8px 20px rgba(0,0,0,0.18);
+.theme-title{
+    padding:12px;
+    text-align:center;
+    font-weight:600;
+    background:#f1f5f9;
 }
-
 /* Footer */
 footer{
     text-align:center;
@@ -127,13 +126,14 @@ function toggle(id){
     el.style.display = (el.style.display === "block") ? "none" : "block";
 }
 </script>
+
 </head>
 
 <body>
 
 <header>
-PRIME – Plateforme des Recherches et Initiatives Médicales
-<img src="images/avatar.jpg" class="avatar" alt="Mon avatar">
+Plateforme des Recherches et Initiatives Médicales (PRIME)
+<img src="avatar.jpg" class="avatar" alt="Mon avatar">
 </header>
 
 <nav>
@@ -145,100 +145,81 @@ PRIME – Plateforme des Recherches et Initiatives Médicales
 
 <div class="container">
 
-<!-- Avant-propos -->
+<!-- AVANT-PROPOS -->
 <div class="box" id="avant" onclick="toggle('contentAvant')">
 Avant-propos
 <div class="content" id="contentAvant">
-<p>
-PRIME est une plateforme académique et scientifique dédiée à la diffusion
-du savoir médical, à la recherche universitaire et au renforcement des
-compétences des étudiants en sciences de la santé.
-</p>
-<p>
-Elle repose sur les valeurs de rigueur scientifique, de collaboration,
-de solidarité académique et d’engagement pour l’amélioration continue
-de la formation médicale.
-</p>
+<p>PRIME est une plateforme académique et scientifique dédiée à la diffusion du savoir médical, à la recherche universitaire et au renforcement des compétences des étudiants en sciences de la santé.</p>
+<p>Elle repose sur les valeurs de rigueur scientifique, de collaboration, de solidarité académique et d’engagement pour l’amélioration continue de la formation médicale.</p>
 </div>
 </div>
 
-<!-- Objectifs -->
+<!-- OBJECTIFS -->
 <div class="box" id="objectifs" onclick="toggle('contentObjectifs')">
-Objectifs
+Objectifs de la plateforme PRIME
 <div class="content" id="contentObjectifs">
-<p>
-Les principaux objectifs sont :
-</p>
 <ul>
 <li>Renforcer la compréhension des bases anatomiques et physiologiques</li>
-<li>Encourager la recherche et l’innovation scientifique</li>
-<li>Partager des connaissances fiables et structurées</li>
-<li>Créer un espace collaboratif pour étudiants et professionnels</li>
+<li>Encourager la recherche médicale et la réflexion scientifique</li>
+<li>Faciliter le partage de connaissances fiables et structurées</li>
+<li>Développer l’esprit critique et l’initiative académique</li>
+<li>Créer un espace collaboratif entre étudiants et futurs professionnels</li>
 </ul>
 </div>
 </div>
 
-<!-- Nos Thèmes -->
+<!-- THEMES -->
 <div class="box" id="themes" onclick="toggle('contentThemes')">
 Nos Thèmes
 <div class="content" id="contentThemes">
 
 <div class="themes">
 
-<!-- Carte thème Poumons -->
 <a href="poumons.html" class="theme-card">
-<img src="images/poumons.jpg" alt="Poumons">
+<img src="poumons.jpg">
 <div class="theme-title">Poumons</div>
 </a>
 
-<!-- Carte thème Cœur -->
 <a href="coeur.html" class="theme-card">
-<img src="images/coeur.jpg" alt="Cœur">
+<img src="coeur.jpg">
 <div class="theme-title">Cœur</div>
 </a>
 
-<!-- Carte thème Cerveau -->
 <a href="cerveau.html" class="theme-card">
-<img src="images/cerveau.jpg" alt="Cerveau">
+<img src="cerveau.jpg">
 <div class="theme-title">Cerveau</div>
 </a>
 
-<!-- Carte thème Estomac -->
 <a href="estomac.html" class="theme-card">
-<img src="images/estomac.jpg" alt="Estomac">
+<img src="estomac.jpg">
 <div class="theme-title">Estomac</div>
 </a>
 
-<!-- Carte thème Foie -->
 <a href="foie.html" class="theme-card">
-<img src="images/foie.jpg" alt="Foie">
+<img src="foie.jpg">
 <div class="theme-title">Foie</div>
 </a>
 
-<!-- Carte thème Rate -->
 <a href="rate.html" class="theme-card">
-<img src="images/rate.jpg" alt="Rate">
+<img src="rate.jpg">
 <div class="theme-title">Rate</div>
 </a>
 
-<!-- Carte thème Pancréas -->
 <a href="pancreas.html" class="theme-card">
-<img src="images/pancreas.jpg" alt="Pancréas">
+<img src="pancreas.jpg">
 <div class="theme-title">Pancréas</div>
 </a>
 
 </div>
+
 </div>
 </div>
 
-<!-- Membres -->
+<!-- MEMBRES -->
 <div class="box" id="membres" onclick="toggle('contentMembres')">
 Les principaux membres
 <div class="content" id="contentMembres">
-<p>
-PRIME est portée par un groupe d’étudiants motivés par la recherche
-médicale et le partage des connaissances :
-</p>
+<p>PRIME est portée par un groupe d’étudiants engagés, motivés par la recherche médicale et le partage des connaissances :</p>
 <p>
 Annadif Ahmat Aboubakar – EM3<br>
 Ousman Mahamat Albachir – EM3<br>
@@ -248,10 +229,7 @@ Mahmoud Zakaria – EM3<br>
 Mahamat Abdaraman Bachir – EM3<br>
 Bechir Mahamat Ankri – EM3
 </p>
-<p>
-Ces membres contribuent activement au développement et à la crédibilité
-scientifique de la plateforme.
-</p>
+<p>Ces membres contribuent activement au développement et à la crédibilité scientifique de la plateforme.</p>
 </div>
 </div>
 
