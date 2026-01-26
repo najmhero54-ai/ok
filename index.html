@@ -1,330 +1,212 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html><html lang="fr">
 <head>
 <meta charset="UTF-8">
 <title>PRIME – Plateforme Médicale</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><style>
+:root{
+  --primary:#0b5ed7;      /* bleu médical */
+  --secondary:#198754;    /* vert santé */
+  --accent:#20c997;       /* vert menthe */
+  --light:#f4f8fb;        /* fond clair */
+  --dark:#1f2937;         /* texte foncé */
+}
 
-<style>
 body{
-    font-family: "Segoe UI", Arial, sans-serif;
-    background:#f4f7fb;
-    margin:0;
-    color:#1f2937;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:var(--light);
+  margin:0;
+  color:var(--dark);
 }
 
-/* Header */
 header{
-    background:linear-gradient(90deg,#0f4c75,#3282b8);
-    color:white;
-    text-align:center;
-    padding:45px 20px;
-    font-size:1.6em;
-    font-weight:bold;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:white;
+  text-align:center;
+  padding:50px 20px;
 }
+header h1{margin:0;font-size:2em;}
+header p{margin-top:10px;font-size:1.1em;opacity:0.95;}
 
-/* Navigation */
 nav{
-    background:#1b262c;
-    padding:12px 20px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:100;
+  background:#ffffff;
+  padding:12px 20px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
-
 nav a{
-    color:#e0f2fe;
-    text-decoration:none;
-    margin:0 15px;
-    font-weight:600;
+  color:var(--primary);
+  text-decoration:none;
+  margin:0 15px;
+  font-weight:600;
 }
+nav a:hover{color:var(--secondary);}
 
-nav a:hover{
-    color:#ffffff;
-    text-decoration:underline;
-}
-
-/* Container */
 .container{
-    width:90%;
-    max-width:1050px;
-    margin:35px auto;
+  width:92%;
+  max-width:1100px;
+  margin:40px auto;
 }
 
-/* Main boxes */
-.box{
-    background:white;
-    padding:28px;
-    margin-bottom:25px;
-    border-radius:14px;
-    cursor:pointer;
-    box-shadow:0 6px 18px rgba(0,0,0,0.12);
-    transition:0.3s;
-    font-size:1.15em;
-    font-weight:600;
+.section{
+  background:white;
+  padding:30px;
+  margin-bottom:30px;
+  border-radius:16px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+.section h2{
+  color:var(--primary);
+  margin-top:0;
 }
 
-.box:hover{
-    background:#eef6ff;
-}
-
-/* Hidden content */
-.content{
-    display:none;
-    background:#ffffff;
-    padding:18px 22px;
-    margin-top:15px;
-    border-radius:10px;
-    line-height:1.7;
-    font-weight:400;
-}
-
-/* Themes grid */
 .themes{
-    display:flex;
-    flex-wrap:wrap;
-    gap:22px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
 }
-
-/* Theme cards */
 .theme-card{
-    width:190px;
-    background:#ffffff;
-    border-radius:14px;
-    overflow:hidden;
-    cursor:pointer;
-    box-shadow:0 3px 10px rgba(0,0,0,0.12);
-    transition:0.3s;
+  width:220px;
+  background:#ffffff;
+  border-radius:14px;
+  overflow:hidden;
+  cursor:pointer;
+  box-shadow:0 3px 8px rgba(0,0,0,0.1);
+  transition:0.3s;
 }
-
 .theme-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 8px 20px rgba(0,0,0,0.18);
+  transform:translateY(-6px);
 }
-
-.theme-card img{
-    width:100%;
-    height:120px;
-    object-fit:cover;
-}
-
 .theme-title{
-    padding:12px;
-    text-align:center;
-    font-weight:600;
-    background:#f1f5f9;
+  padding:14px;
+  text-align:center;
+  font-weight:700;
+  background:#eef6ff;
+  color:var(--primary);
 }
 
-/* Theme content */
-.theme-content{
-    display:none;
-    margin-top:18px;
-    padding:20px;
-    background:#eaf4ff;
-    border-radius:12px;
-    line-height:1.7;
+.course{
+  display:none;
+  margin-top:30px;
+  padding:25px;
+  background:#f8fbff;
+  border-radius:14px;
+  line-height:1.7;
 }
+.course h3, .course h4{color:var(--secondary);}  
 
-/* Footer */
 footer{
-    text-align:center;
-    padding:25px;
-    background:#1b262c;
-    color:#cbd5e1;
-    margin-top:50px;
-    font-size:0.95em;
+  text-align:center;
+  padding:25px;
+  background:#111827;
+  color:#e5e7eb;
+  margin-top:50px;
 }
-</style>
-
-<script>
+</style><script>
 function toggle(id){
-    const el = document.getElementById(id);
-    el.style.display = (el.style.display === "block") ? "none" : "block";
+  const el = document.getElementById(id);
+  el.style.display = (el.style.display === "block") ? "none" : "block";
 }
-</script>
-
-</head>
-
-<body>
-
-<header>
-Plateforme des Recherches et Initiatives Médicales (PRIME)
-</header>
-
-<nav>
-<a href="#avant">Avant-propos</a>
-<a href="#objectifs">Objectifs</a>
-<a href="#themes">Nos Thèmes</a>
-<a href="#membres">Membres</a>
-</nav>
-
-<div class="container">
-
-<!-- AVANT-PROPOS -->
-<div class="box" id="avant" onclick="toggle('contentAvant')">
-Avant-propos
-<div class="content" id="contentAvant">
+</script></head><body><header>
+  <h1>PRIME</h1>
+  <p>Plateforme des Recherches et Initiatives Médicales</p>
+</header><nav>
+  <a href="#avant">Avant-propos</a>
+  <a href="#objectifs">Objectifs</a>
+  <a href="#themes">Nos Thèmes</a>
+  <a href="#membres">Membres</a>
+</nav><div class="container"><!-- Avant-propos --><section class="section" id="avant">
+<h2>Avant-propos</h2>
 <p>
-PRIME est une plateforme académique et scientifique dédiée à la diffusion
-du savoir médical, à la recherche universitaire et au renforcement des
-compétences des étudiants en sciences de la santé.
+PRIME est une plateforme académique et scientifique créée dans un esprit de rigueur, de solidarité et d’excellence. 
+Elle a pour vocation de rassembler les étudiants en sciences de la santé autour d’un objectif commun : approfondir les connaissances médicales, 
+faciliter la compréhension des cours et encourager l’auto-formation continue.
 </p>
 <p>
-Elle repose sur les valeurs de rigueur scientifique, de collaboration,
-de solidarité académique et d’engagement pour l’amélioration continue
-de la formation médicale.
+À travers PRIME, nous croyons que le savoir médical doit être partagé de manière claire, structurée et accessible, 
+afin de former des professionnels compétents, responsables et engagés au service de la santé humaine.
 </p>
-</div>
-</div>
-
-<!-- OBJECTIFS -->
-<div class="box" id="objectifs" onclick="toggle('contentObjectifs')">
-Objectifs de la plateforme PRIME
-<div class="content" id="contentObjectifs">
+</section><!-- Objectifs --><section class="section" id="objectifs">
+<h2>Objectifs de la plateforme</h2>
+<p>La plateforme PRIME poursuit plusieurs objectifs pédagogiques et scientifiques :</p>
+<ul>
+<li>Renforcer la compréhension des cours fondamentaux de médecine</li>
+<li>Encourager la recherche et l’analyse scientifique chez les étudiants</li>
+<li>Centraliser des thèmes médicaux fiables et bien structurés</li>
+<li>Favoriser le travail collaboratif et l’entraide académique</li>
+<li>Développer l’esprit critique, l’initiative et l’innovation médicale</li>
+</ul>
+</section><!-- Thèmes --><section class="section" id="themes">
+<h2>Nos Thèmes Médicaux</h2>
 <p>
-Les objectifs principaux de PRIME sont :
+Les thèmes proposés sur PRIME couvrent les grandes disciplines médicales. 
+Chaque thème est développé sous forme de cours détaillé, destiné aux étudiants en médecine et sciences de la santé.
+</p><div class="themes">
+  <div class="theme-card" onclick="toggle('poumons')">
+    <div class="theme-title">Anatomie et Physiologie des Poumons</div>
+  </div>
+</div><!-- Cours Poumons --><div class="course" id="poumons">
+<h3>Anatomie et Physiologie des Poumons</h3>
+<p><strong>Institution :</strong> Université Adam Barka d’Abéché<br>
+<strong>Faculté :</strong> Sciences de la Santé Humaine<br>
+<strong>Département :</strong> Médecine – Chirurgie<br>
+<strong>Exposant :</strong> Annadif Ahmat Aboubakari<br>
+<strong>Année académique :</strong> 2025–2026</p><h4>I. Introduction et généralités</h4>
+<p>
+Les poumons sont des organes essentiels du système respiratoire. Ils assurent la fonction vitale de la respiration, 
+permettant à l’organisme de capter l’oxygène indispensable au métabolisme cellulaire et d’éliminer le dioxyde de carbone, 
+produit toxique du métabolisme.
+</p><h4>II. Situation et configuration</h4>
+<p>
+Les poumons sont situés dans la cavité thoracique, de part et d’autre du médiastin. 
+Ils sont recouverts par la plèvre et reposent sur le diaphragme. 
+Le poumon droit comporte trois lobes (supérieur, moyen et inférieur), tandis que le poumon gauche n’en possède que deux, 
+laissant place au cœur.
+</p><h4>III. Structure anatomique</h4>
+<p>
+Chaque poumon est constitué de bronches, bronchioles et alvéoles pulmonaires. 
+Les alvéoles représentent l’unité fonctionnelle du poumon et sont le siège des échanges gazeux entre l’air et le sang.
+</p><h4>IV. Physiologie respiratoire</h4>
+<p>
+La respiration comprend deux phases : l’inspiration et l’expiration. 
+L’hématose correspond aux échanges gazeux réalisés au niveau des alvéoles pulmonaires, 
+permettant l’oxygénation du sang et l’élimination du CO₂.
+</p><h4>V. Rôles des poumons</h4>
+<ul>
+<li>Hématose et respiration</li>
+<li>Régulation du pH sanguin</li>
+<li>Participation à la phonation</li>
+<li>Rôle immunitaire et métabolique</li>
+</ul><h4>VI. Conclusion</h4>
+<p>
+Les poumons jouent un rôle fondamental dans la survie de l’organisme. 
+La connaissance approfondie de leur anatomie et de leur physiologie est indispensable pour comprendre 
+les pathologies respiratoires et leur prise en charge médicale.
+</p>
+</div></section><!-- Membres --><section class="section" id="membres">
+<h2>Les principaux membres de PRIME</h2>
+<p>
+PRIME repose sur l’engagement et la collaboration d’étudiants motivés en sciences de la santé. 
+Ces membres participent activement à la recherche, à la rédaction et au partage des contenus pédagogiques.
+</p>
+<p>
+<strong>Membres fondateurs et actifs :</strong>
 </p>
 <ul>
-<li>Renforcer la compréhension des bases anatomiques et physiologiques</li>
-<li>Encourager la recherche médicale et la réflexion scientifique</li>
-<li>Faciliter le partage de connaissances fiables et structurées</li>
-<li>Développer l’esprit critique et l’initiative académique</li>
-<li>Créer un espace collaboratif entre étudiants et futurs professionnels</li>
+<li>Annadif Ahmat Aboubakari – EM3</li>
+<li>Ousman Mahamat Albachir – EM3</li>
+<li>Korom Saleh Mahamat – EM3</li>
+<li>Zakaria Mahamat Saleh – EM3</li>
+<li>Mahmoud Zakaria – EM3</li>
+<li>Mahamat Abdaraman Bachir – EM3</li>
+<li>Bechir Mahamat Ankri – EM3</li>
 </ul>
-</div>
-</div>
-
-<!-- THEMES -->
-<div class="box" id="themes" onclick="toggle('contentThemes')">
-Nos Thèmes
-<div class="content" id="contentThemes">
-
-<div class="themes">
-
-<div class="theme-card" onclick="toggle('themePoumons')">
-<img src="poumons.jpg">
-<div class="theme-title">Poumons</div>
-</div>
-
-<div class="theme-card" onclick="toggle('themeCoeur')">
-<img src="coeur.jpg">
-<div class="theme-title">Cœur</div>
-</div>
-
-<div class="theme-card" onclick="toggle('themeCerveau')">
-<img src="cerveau.jpg">
-<div class="theme-title">Cerveau</div>
-</div>
-
-<div class="theme-card" onclick="toggle('themeEstomac')">
-<img src="estomac.jpg">
-<div class="theme-title">Estomac</div>
-</div>
-
-<div class="theme-card" onclick="toggle('themeFoie')">
-<img src="foie.jpg">
-<div class="theme-title">Foie</div>
-</div>
-
-<div class="theme-card" onclick="toggle('themeRate')">
-<img src="rate.jpg">
-<div class="theme-title">Rate</div>
-</div>
-
-<div class="theme-card" onclick="toggle('themePancreas')">
-<img src="pancreas.jpg">
-<div class="theme-title">Pancréas</div>
-</div>
-
-</div>
-
-<!-- DESCRIPTIONS -->
-<div class="theme-content" id="themePoumons">
-<h4>Anatomie et physiologie des poumons</h4>
 <p>
-Les poumons sont des organes respiratoires pairs assurant l’hématose,
-c’est-à-dire l’oxygénation du sang et l’élimination du dioxyde de carbone.
+Ensemble, ces membres œuvrent pour la promotion du savoir médical et l’excellence académique.
 </p>
-</div>
-
-<div class="theme-content" id="themeCoeur">
-<h4>Anatomie du cœur</h4>
-<p>
-Le cœur est un organe musculaire central du système cardiovasculaire.
-Il assure la propulsion du sang vers l’ensemble de l’organisme.
-</p>
-</div>
-
-<div class="theme-content" id="themeCerveau">
-<h4>Anatomie du cerveau</h4>
-<p>
-Le cerveau est l’organe principal du système nerveux central.
-Il coordonne les fonctions motrices, sensitives, cognitives et autonomes.
-</p>
-</div>
-
-<div class="theme-content" id="themeEstomac">
-<h4>Anatomie de l’estomac</h4>
-<p>
-L’estomac est un organe digestif assurant le stockage et la digestion
-chimique et mécanique des aliments.
-</p>
-</div>
-
-<div class="theme-content" id="themeFoie">
-<h4>Anatomie du foie</h4>
-<p>
-Le foie joue un rôle majeur dans le métabolisme, la détoxification
-et la production de la bile.
-</p>
-</div>
-
-<div class="theme-content" id="themeRate">
-<h4>Anatomie de la rate</h4>
-<p>
-La rate est un organe lymphoïde impliqué dans l’immunité et la filtration du sang.
-</p>
-</div>
-
-<div class="theme-content" id="themePancreas">
-<h4>Anatomie du pancréas</h4>
-<p>
-Le pancréas est une glande mixte assurant des fonctions digestives et endocrines.
-</p>
-</div>
-
-</div>
-</div>
-
-<!-- MEMBRES -->
-<div class="box" id="membres" onclick="toggle('contentMembres')">
-Les principaux membres
-<div class="content" id="contentMembres">
-<p>
-PRIME est portée par un groupe d’étudiants engagés, motivés par la recherche
-médicale et le partage des connaissances :
-</p>
-<p>
-Annadif Ahmat Aboubakar – EM3<br>
-Ousman Mahamat Albachir – EM3<br>
-Korom Saleh Mahamat – EM3<br>
-Zakaria Mahamat Saleh – EM3<br>
-Mahmoud Zakaria – EM3<br>
-Mahamat Abdaraman Bachir – EM3<br>
-Bechir Mahamat Ankri – EM3
-</p>
-<p>
-Ces membres contribuent activement au développement et à la crédibilité
-scientifique de la plateforme.
-</p>
-</div>
-</div>
-
-</div>
-
-<footer>
-© 2026 — PRIME | Plateforme académique médicale
-</footer>
-
-</body>
+</section></div><footer>
+© 2026 — PRIME | Conçu et développé par Najm
+</footer></body>
 </html>
