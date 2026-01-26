@@ -2,100 +2,329 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Mes Thèmes d'Anatomie</title>
+<title>PRIME – Plateforme Médicale</title>
+
 <style>
-  body { font-family: Arial; text-align: center; margin:0; padding:0; }
-  h1 { margin-top: 30px; }
-  .theme {
-    width: 250px; height: 150px;
-    background-color: #4caf50; color: white;
-    display: inline-block; margin: 15px;
-    line-height: 150px; font-size: 18px;
-    cursor: pointer; border-radius: 12px;
-    transition: 0.3s;
-  }
-  .theme:hover { background-color: #45a049; }
-  img { max-width: 90%; height: auto; margin: 20px 0; }
-  button {
-    padding: 10px 20px; font-size: 16px;
-    cursor: pointer; border-radius: 8px; background-color:#4caf50; color:white; border:none;
+body{
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:#f4f7fb;
+    margin:0;
+    color:#1f2937;
+}
+
+/* Header */
+header{
+    background:linear-gradient(90deg,#0f4c75,#3282b8);
+    color:white;
+    text-align:center;
+    padding:45px 20px;
+    font-size:1.6em;
+    font-weight:bold;
+}
+
+/* Navigation */
+nav{
+    background:#1b262c;
+    padding:12px 20px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+nav a{
+    color:#e0f2fe;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#ffffff;
+    text-decoration:underline;
+}
+
+/* Container */
+.container{
+    width:90%;
+    max-width:1050px;
+    margin:35px auto;
+}
+
+/* Main boxes */
+.box{
+    background:white;
+    padding:28px;
+    margin-bottom:25px;
+    border-radius:14px;
+    cursor:pointer;
+    box-shadow:0 6px 18px rgba(0,0,0,0.12);
     transition:0.3s;
-  }
-  button:hover { background-color:#45a049; }
+    font-size:1.15em;
+    font-weight:600;
+}
+
+.box:hover{
+    background:#eef6ff;
+}
+
+/* Hidden content */
+.content{
+    display:none;
+    background:#ffffff;
+    padding:18px 22px;
+    margin-top:15px;
+    border-radius:10px;
+    line-height:1.7;
+    font-weight:400;
+}
+
+/* Themes grid */
+.themes{
+    display:flex;
+    flex-wrap:wrap;
+    gap:22px;
+}
+
+/* Theme cards */
+.theme-card{
+    width:190px;
+    background:#ffffff;
+    border-radius:14px;
+    overflow:hidden;
+    cursor:pointer;
+    box-shadow:0 3px 10px rgba(0,0,0,0.12);
+    transition:0.3s;
+}
+
+.theme-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.18);
+}
+
+.theme-card img{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+}
+
+.theme-title{
+    padding:12px;
+    text-align:center;
+    font-weight:600;
+    background:#f1f5f9;
+}
+
+/* Theme content */
+.theme-content{
+    display:none;
+    margin-top:18px;
+    padding:20px;
+    background:#eaf4ff;
+    border-radius:12px;
+    line-height:1.7;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#1b262c;
+    color:#cbd5e1;
+    margin-top:50px;
+    font-size:0.95em;
+}
 </style>
-</head>
-<body>
-
-<!-- ========== PAGE D'ACCUEIL ========== -->
-<div id="home">
-<h1>Choisis un thème</h1>
-<div class="theme" onclick="showPage('coeur')">Anatomie du Cœur</div>
-<div class="theme" onclick="showPage('cerveau')">Anatomie du Cerveau</div>
-<div class="theme" onclick="showPage('estomac')">Anatomie de l'Estomac</div>
-<div class="theme" onclick="showPage('foie')">Anatomie du Foie</div>
-<div class="theme" onclick="showPage('rate')">Anatomie de la Rate</div>
-<div class="theme" onclick="showPage('pancreas')">Anatomie du Pancréas</div>
-</div>
-
-<!-- ========== PAGE CŒUR ========== -->
-<div id="coeur" style="display:none;">
-<h1>Anatomie du Cœur</h1>
-<img src="coeur.jpg" alt="Cœur">
-<p>Le cœur est un organe musculaire qui assure la circulation du sang dans tout le corps...</p>
-<button onclick="showPage('home')">Retour à l’accueil</button>
-</div>
-
-<!-- ========== PAGE CERVEAU ========== -->
-<div id="cerveau" style="display:none;">
-<h1>Anatomie du Cerveau</h1>
-<img src="cerveau.jpg" alt="Cerveau">
-<p>Le cerveau est le centre de contrôle du système nerveux central, responsable des fonctions cognitives...</p>
-<button onclick="showPage('home')">Retour à l’accueil</button>
-</div>
-
-<!-- ========== PAGE ESTOMAC ========== -->
-<div id="estomac" style="display:none;">
-<h1>Anatomie de l'Estomac</h1>
-<img src="estomac.jpg" alt="Estomac">
-<p>L'estomac est un organe creux qui stocke et digère les aliments ingérés...</p>
-<button onclick="showPage('home')">Retour à l’accueil</button>
-</div>
-
-<!-- ========== PAGE FOIE ========== -->
-<div id="foie" style="display:none;">
-<h1>Anatomie du Foie</h1>
-<img src="foie.jpg" alt="Foie">
-<p>Le foie est un organe vital qui assure de nombreuses fonctions métaboliques et détoxifiantes...</p>
-<button onclick="showPage('home')">Retour à l’accueil</button>
-</div>
-
-<!-- ========== PAGE RATE ========== -->
-<div id="rate" style="display:none;">
-<h1>Anatomie de la Rate</h1>
-<img src="rate.jpg" alt="Rate">
-<p>La rate est un organe lymphatique qui participe à la filtration du sang et à la réponse immunitaire...</p>
-<button onclick="showPage('home')">Retour à l’accueil</button>
-</div>
-
-<!-- ========== PAGE PANCRÉAS ========== -->
-<div id="pancreas" style="display:none;">
-<h1>Anatomie du Pancréas</h1>
-<img src="pancreas.jpg" alt="Pancréas">
-<p>Le pancréas est une glande digestive et endocrine qui régule la glycémie et produit des enzymes digestives...</p>
-<button onclick="showPage('home')">Retour à l’accueil</button>
-</div>
 
 <script>
-function showPage(pageId){
-  // Cacher toutes les pages
-  const pages = ['home','coeur','cerveau','estomac','foie','rate','pancreas'];
-  pages.forEach(function(id){
-    document.getElementById(id).style.display = 'none';
-  });
-  // Afficher la page demandée
-  document.getElementById(pageId).style.display = 'block';
+function toggle(id){
+    const el = document.getElementById(id);
+    el.style.display = (el.style.display === "block") ? "none" : "block";
 }
 </script>
+
+</head>
+
+<body>
+
+<header>
+Plateforme des Recherches et Initiatives Médicales (PRIME)
+</header>
+
+<nav>
+<a href="#avant">Avant-propos</a>
+<a href="#objectifs">Objectifs</a>
+<a href="#themes">Nos Thèmes</a>
+<a href="#membres">Membres</a>
+</nav>
+
+<div class="container">
+
+<!-- AVANT-PROPOS -->
+<div class="box" id="avant" onclick="toggle('contentAvant')">
+Avant-propos
+<div class="content" id="contentAvant">
+<p>
+PRIME est une plateforme académique et scientifique dédiée à la diffusion
+du savoir médical, à la recherche universitaire et au renforcement des
+compétences des étudiants en sciences de la santé.
+</p>
+<p>
+Elle repose sur les valeurs de rigueur scientifique, de collaboration,
+de solidarité académique et d’engagement pour l’amélioration continue
+de la formation médicale.
+</p>
+</div>
+</div>
+
+<!-- OBJECTIFS -->
+<div class="box" id="objectifs" onclick="toggle('contentObjectifs')">
+Objectifs de la plateforme PRIME
+<div class="content" id="contentObjectifs">
+<p>
+Les objectifs principaux de PRIME sont :
+</p>
+<ul>
+<li>Renforcer la compréhension des bases anatomiques et physiologiques</li>
+<li>Encourager la recherche médicale et la réflexion scientifique</li>
+<li>Faciliter le partage de connaissances fiables et structurées</li>
+<li>Développer l’esprit critique et l’initiative académique</li>
+<li>Créer un espace collaboratif entre étudiants et futurs professionnels</li>
+</ul>
+</div>
+</div>
+
+<!-- THEMES -->
+<div class="box" id="themes" onclick="toggle('contentThemes')">
+Nos Thèmes
+<div class="content" id="contentThemes">
+
+<div class="themes">
+
+<div class="theme-card" onclick="toggle('themePoumons')">
+<img src="poumons.jpg">
+<div class="theme-title">Poumons</div>
+</div>
+
+<div class="theme-card" onclick="toggle('themeCoeur')">
+<img src="coeur.jpg">
+<div class="theme-title">Cœur</div>
+</div>
+
+<div class="theme-card" onclick="toggle('themeCerveau')">
+<img src="cerveau.jpg">
+<div class="theme-title">Cerveau</div>
+</div>
+
+<div class="theme-card" onclick="toggle('themeEstomac')">
+<img src="estomac.jpg">
+<div class="theme-title">Estomac</div>
+</div>
+
+<div class="theme-card" onclick="toggle('themeFoie')">
+<img src="foie.jpg">
+<div class="theme-title">Foie</div>
+</div>
+
+<div class="theme-card" onclick="toggle('themeRate')">
+<img src="rate.jpg">
+<div class="theme-title">Rate</div>
+</div>
+
+<div class="theme-card" onclick="toggle('themePancreas')">
+<img src="pancreas.jpg">
+<div class="theme-title">Pancréas</div>
+</div>
+
+</div>
+
+<!-- DESCRIPTIONS -->
+<div class="theme-content" id="themePoumons">
+<h4>Anatomie et physiologie des poumons</h4>
+<p>
+Les poumons sont des organes respiratoires pairs assurant l’hématose,
+c’est-à-dire l’oxygénation du sang et l’élimination du dioxyde de carbone.
+</p>
+</div>
+
+<div class="theme-content" id="themeCoeur">
+<h4>Anatomie du cœur</h4>
+<p>
+Le cœur est un organe musculaire central du système cardiovasculaire.
+Il assure la propulsion du sang vers l’ensemble de l’organisme.
+</p>
+</div>
+
+<div class="theme-content" id="themeCerveau">
+<h4>Anatomie du cerveau</h4>
+<p>
+Le cerveau est l’organe principal du système nerveux central.
+Il coordonne les fonctions motrices, sensitives, cognitives et autonomes.
+</p>
+</div>
+
+<div class="theme-content" id="themeEstomac">
+<h4>Anatomie de l’estomac</h4>
+<p>
+L’estomac est un organe digestif assurant le stockage et la digestion
+chimique et mécanique des aliments.
+</p>
+</div>
+
+<div class="theme-content" id="themeFoie">
+<h4>Anatomie du foie</h4>
+<p>
+Le foie joue un rôle majeur dans le métabolisme, la détoxification
+et la production de la bile.
+</p>
+</div>
+
+<div class="theme-content" id="themeRate">
+<h4>Anatomie de la rate</h4>
+<p>
+La rate est un organe lymphoïde impliqué dans l’immunité et la filtration du sang.
+</p>
+</div>
+
+<div class="theme-content" id="themePancreas">
+<h4>Anatomie du pancréas</h4>
+<p>
+Le pancréas est une glande mixte assurant des fonctions digestives et endocrines.
+</p>
+</div>
+
+</div>
+</div>
+
+<!-- MEMBRES -->
+<div class="box" id="membres" onclick="toggle('contentMembres')">
+Les principaux membres
+<div class="content" id="contentMembres">
+<p>
+PRIME est portée par un groupe d’étudiants engagés, motivés par la recherche
+médicale et le partage des connaissances :
+</p>
+<p>
+Annadif Ahmat Aboubakar – EM3<br>
+Ousman Mahamat Albachir – EM3<br>
+Korom Saleh Mahamat – EM3<br>
+Zakaria Mahamat Saleh – EM3<br>
+Mahmoud Zakaria – EM3<br>
+Mahamat Abdaraman Bachir – EM3<br>
+Bechir Mahamat Ankri – EM3
+</p>
+<p>
+Ces membres contribuent activement au développement et à la crédibilité
+scientifique de la plateforme.
+</p>
+</div>
+</div>
+
+</div>
+
+<footer>
+© 2026 — PRIME | Plateforme académique médicale
+</footer>
 
 </body>
 </html>
