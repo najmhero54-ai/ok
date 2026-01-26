@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>PRIME</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f0f2f5;
+    margin:0;
+}
+
+header{
+    background:#3a86ff;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    font-size:1.5em;
+    font-weight:bold;
+}
+
+nav{
+    background:#264653;
+    padding:10px 20px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+    font-size:1em;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:30px auto;
+}
+
+.box{
+    background:white;
+    padding:25px;
+    margin-bottom:20px;
+    border-radius:12px;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    transition:0.3s;
+    font-size:1.1em;
+    font-weight:bold;
+}
+
+.box:hover{
+    background:#e0f0ff;
+}
+
+.content{
+    display:none;
+    background:#ffffff;
+    padding:15px 20px;
+    margin-top:10px;
+    border-radius:8px;
+    line-height:1.6;
+}
+
+.themes{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:flex-start;
+}
+
+.theme-card{
+    width:180px;
+    background:#ffffff;
+    border-radius:12px;
+    overflow:hidden;
+    cursor:pointer;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.theme-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.theme-card img{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+}
+
+.theme-title{
+    padding:10px;
+    text-align:center;
+    font-weight:bold;
+    background:#f7f9fc;
+}
+
+.theme-content{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    background:#eef6ff;
+    border-radius:8px;
+    line-height:1.5;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#333;
+    color:white;
+    margin-top:40px;
+    font-size:0.9em;
+}
+</style>
+
+<script>
+function toggle(id){
+    let element = document.getElementById(id);
+    element.style.display = element.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+Bienvenue dans la Plate-forme des Recherches et Initiatives Médicales
+</header>
+
+<!-- Menu avec liens cliquables -->
+<nav>
+<a href="#avant">Avant-propos</a>
+<a href="#objectifs">Objectifs</a>
+<a href="#themes">Nos Thèmes</a>
+<a href="#membres">Membres</a>
+</nav>
+
+<div class="container">
+
+<!-- Avant-propos -->
+<div class="box" id="avant" onclick="toggle('contentAvant')">
+    Avant-propos
+    <div class="content" id="contentAvant">
+        <p>
+        Bienvenue sur PRIME.  
+        Cette plateforme est fondée sur la bienveillance, le partage du savoir,
+        l’entraide entre étudiants et professionnels de santé,
+        et l’engagement pour l’amélioration des connaissances médicales.
+        </p>
+    </div>
+</div>
+
+<!-- Objectifs -->
+<div class="box" id="objectifs" onclick="toggle('contentObjectifs')">
+    Les Objectifs du PRIME
+    <div class="content" id="contentObjectifs">
+        <p>
+        - Encourager la recherche médicale  
+        <br>- Favoriser le travail en équipe  
+        <br>- Partager des thèmes scientifiques fiables  
+        <br>- Développer l’esprit d’initiative et d’innovation
+        </p>
+    </div>
+</div>
+
+<!-- Nos Thèmes -->
+<div class="box" id="themes" onclick="toggle('contentThemes')">
+    Nos Thèmes
+    <div class="content" id="contentThemes">
+
+        <div class="themes">
+
+            <!-- Thème Anatomie des Poumons -->
+            <div class="theme-card" onclick="toggle('themePoumons')">
+                <img src="poumons.jpg" alt="Anatomie des Poumons"> 
+                <div class="theme-title">Anatomie des Poumons</div>
+            </div>
+
+        </div>
+
+        <div class="theme-content" id="themePoumons">
+            <h4>Exposé : Anatomie et Physiologie des Poumons</h4>
+            <p>
+                Institution : Université Adam Barka d’Abéché<br>
+                Faculté : Sciences de la Santé Humaine<br>
+                Département : Médecine - Chirurgie<br>
+                Exposant : Le "Presque" Docteur Annadif Ahmat Aboubakari (3ème Année)<br>
+                Année Académique : 2025 - 2026
+            </p>
+
+            <h5>I - INTRODUCTION</h5>
+            <p>
+                1. Généralités : Les poumons sont des organes essentiels du système respiratoire situés dans la cavité thoracique.  
+                Ce sont des organes pairs, spongieux et extensibles.  
+                Ils sont séparés par le médiastin qui contient notamment le cœur.  
+                Poids : Droit ~650g, Gauche ~550g.
+            </p>
+            <p>
+                2. Définitions :  
+                - Poumons : Organes respiratoires pairs permettant l’échange gazeux (hématose).  
+                - Hématose : Transformation chimique du sang, enrichissement en O₂ et élimination de CO₂.
+            </p>
+
+            <h5>II - LES FONCTIONS DES POUMONS</h5>
+            <p>
+                1. Fonction Respiratoire Principale : L'Hématose<br>
+                2. Rôle dans la régulation du pH sanguin<br>
+                3. Rôle dans la phonation<br>
+                4. Rôle métabolique
+            </p>
+
+            <p>
+                Pour plus d’informations, visite 
+                <a href="https://fr.wikipedia.org/wiki/Poumon" target="_blank">Wikipedia - Poumon</a>.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<!-- Membres -->
+<div class="box" id="membres" onclick="toggle('contentMembres')">
+    Les principaux membres de la PRIME
+    <div class="content" id="contentMembres">
+        <p>
+        - Annadif Ahmat Aboubakar – EM3<br>
+        - Ousman Mahamat Albachir – EM3<br>
+        - Korom Saleh Mahamat – EM3<br>
+        - Zakaria Mahamat Saleh – EM3<br>
+        - Mahmoud Zakaria – EM3<br>
+        - Mahamat Abdaraman Bachir – EM3<br>
+        - Bechir Mahamat Ankri – EM3
+        </p>
+    </div>
+</div>
+
+</div>
+
+<footer>
+© 2026 — PRIME | Créé par Najm
+</footer>
+<script>
+function toggle(id) {
+  const element = document.getElementById(id);
+  if (element.style.display === "block") {
+    element.style.display = "none";
+  } else {
+    element.style.display = "block";
+  }
+}
+</script>
+</body>
+</html>
