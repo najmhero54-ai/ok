@@ -5,179 +5,165 @@
 <title>PRIME – Plateforme Médicale</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- ===== Aperçu du lien (image quand on partage) ===== -->
+<meta property="og:title" content="PRIME – Plateforme Médicale">
+<meta property="og:description" content="Plateforme académique dédiée à la recherche et aux cours médicaux.">
+<meta property="og:image" content="https://najmhero54-ai.github.io/ok/preview.jpg">
+<meta property="og:url" content="https://najmhero54-ai.github.io/ok/">
+<meta property="og:type" content="website">
+
 <style>
 /* ===== Body ===== */
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: #f4f7fb;
-    color: #1f2937;
+html, body{
+    margin:0;
+    padding:0;
+    font-family:"Segoe UI", Arial, sans-serif;
+    background:#f4f7fb;
+    color:#1f2937;
 }
 
 /* ===== Header ===== */
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 250px;
-    background: linear-gradient(90deg,#0f4c75,#3282b8);
-    color: white;
-    text-align: center;
-    position: relative;
-    padding: 40px 20px;
+header{
+    min-height:320px;
+    background:linear-gradient(90deg,#0f4c75,#3282b8);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+    position:relative;
+    padding:40px 20px;
 }
 
-/* Header texte */
-header h1 {
-    font-size: 2.8em;
-    font-weight: bold;
-    margin: 0;
+header h1{
+    font-size:3em;
+    font-weight:800;
+    max-width:900px;
 }
 
 /* Avatar */
-header img.avatar {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border: 2px solid white;
+header .avatar{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:75px;
+    height:75px;
+    border-radius:50%;
+    border:3px solid white;
+    object-fit:cover;
 }
 
 /* ===== Navigation ===== */
-nav {
-    background: #1b262c;
-    padding: 12px 20px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+nav{
+    background:#1b262c;
+    padding:14px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-nav a {
-    color: #e0f2fe;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 600;
+nav a{
+    color:#e0f2fe;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:600;
 }
 
-nav a:hover {
-    color: #ffffff;
-    text-decoration: underline;
+nav a:hover{
+    text-decoration:underline;
 }
 
 /* ===== Container ===== */
-.container {
-    width: 90%;
-    max-width: 1050px;
-    margin: 40px auto;
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:45px auto;
 }
 
 /* ===== Boxes ===== */
-.box {
-    background: white;
-    padding: 28px;
-    margin-bottom: 25px;
-    border-radius: 14px;
-    cursor: pointer;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    transition: 0.3s;
-    font-size: 1.2em;
-    font-weight: 600;
+.box{
+    background:white;
+    padding:30px;
+    margin-bottom:30px;
+    border-radius:16px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.12);
+    cursor:pointer;
+    font-size:1.25em;
+    font-weight:700;
 }
 
-.box:hover {
-    background: #eef6ff;
+.box:hover{
+    background:#eef6ff;
 }
 
 /* Hidden content */
-.content {
-    display: none;
-    background: #ffffff;
-    padding: 18px 22px;
-    margin-top: 15px;
-    border-radius: 10px;
-    line-height: 1.7;
-    font-weight: 400;
+.content{
+    display:none;
+    margin-top:20px;
+    font-size:0.9em;
+    line-height:1.8;
 }
 
-/* Themes grid */
-.themes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 22px;
-    justify-content: flex-start;
+/* ===== Themes ===== */
+.themes{
+    display:flex;
+    flex-wrap:wrap;
+    gap:25px;
 }
 
-/* Theme cards */
-.theme-card {
-    width: 190px;
-    background: #ffffff;
-    border-radius: 14px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-    transition: 0.3s;
+.theme-card{
+    width:200px;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    cursor:pointer;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    transition:0.3s;
 }
 
-.theme-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+.theme-card:hover{
+    transform:translateY(-6px);
 }
 
-.theme-card img {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
+.theme-card img{
+    width:100%;
+    height:130px;
+    object-fit:cover;
 }
 
-.theme-title {
-    padding: 12px;
-    text-align: center;
-    font-weight: 600;
-    background: #f1f5f9;
+.theme-title{
+    padding:12px;
+    text-align:center;
+    font-weight:700;
+    background:#f1f5f9;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 25px;
-    background: #1b262c;
-    color: #cbd5e1;
-    margin-top: 50px;
-    font-size: 0.95em;
+/* ===== Footer ===== */
+footer{
+    background:#1b262c;
+    color:#cbd5e1;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8em;
-        padding: 0 10px;
-    }
-    header img.avatar {
-        width: 50px;
-        height: 50px;
-        top: 10px;
-        right: 10px;
-    }
-    .container {
-        width: 95%;
-        margin: 20px auto;
-    }
-    .theme-card {
-        width: 45%;
+/* ===== Mobile ===== */
+@media(max-width:768px){
+    header h1{font-size:2em;}
+    .theme-card{width:47%;}
+    header .avatar{
+        width:55px;
+        height:55px;
     }
 }
 </style>
 
 <script>
 function toggle(id){
-    const el = document.getElementById(id);
-    el.style.display = (el.style.display === "block") ? "none" : "block";
+    const el=document.getElementById(id);
+    el.style.display = el.style.display==="block" ? "none" : "block";
 }
 </script>
 </head>
@@ -186,7 +172,7 @@ function toggle(id){
 
 <header>
 <h1>Bienvenue sur PRIME – Plateforme des Recherches et Initiatives Médicales</h1>
-<img src="avatar.jpg" class="avatar" alt="Mon avatar">
+<img src="avatar.jpg" class="avatar" alt="Avatar">
 </header>
 
 <nav>
@@ -198,84 +184,68 @@ function toggle(id){
 
 <div class="container">
 
-<!-- AVANT-PROPOS -->
-<div class="box" id="avant" onclick="toggle('contentAvant')">
+<div class="box" id="avant" onclick="toggle('avantContent')">
 Avant-propos
-<div class="content" id="contentAvant">
-<p>
-PRIME est une plateforme académique et scientifique dédiée à la diffusion du savoir médical et à la recherche universitaire.  
-Elle encourage le partage et l’entraide entre étudiants et professionnels de santé.
-</p>
+<div class="content" id="avantContent">
+PRIME est une plateforme académique dédiée à la formation médicale,
+au partage du savoir scientifique et à la recherche universitaire.
 </div>
 </div>
 
-<!-- OBJECTIFS -->
-<div class="box" id="objectifs" onclick="toggle('contentObjectifs')">
+<div class="box" id="objectifs" onclick="toggle('objContent')">
 Objectifs
-<div class="content" id="contentObjectifs">
+<div class="content" id="objContent">
 <ul>
-<li>Renforcer la compréhension des bases anatomiques et physiologiques</li>
-<li>Encourager la recherche médicale et la réflexion scientifique</li>
-<li>Partager des connaissances fiables et structurées</li>
-<li>Développer l’esprit critique et l’initiative académique</li>
-<li>Créer un espace collaboratif entre étudiants et futurs professionnels</li>
+<li>Approfondir les bases de l’anatomie et de la physiologie</li>
+<li>Encourager la recherche médicale</li>
+<li>Structurer des cours fiables et accessibles</li>
+<li>Créer une communauté académique sérieuse</li>
 </ul>
 </div>
 </div>
 
-<!-- THEMES -->
-<div class="box" id="themes" onclick="toggle('contentThemes')">
+<div class="box" id="themes" onclick="toggle('themesContent')">
 Nos Thèmes
-<div class="content" id="contentThemes">
+<div class="content" id="themesContent">
 <div class="themes">
 
 <div class="theme-card" onclick="location.href='poumons.html'">
-<img src="poumons.jpg" alt="Poumons">
-<div class="theme-title">Poumons</div>
+<img src="poumons.jpg"><div class="theme-title">Poumons</div>
 </div>
 
 <div class="theme-card" onclick="location.href='coeur.html'">
-<img src="coeur.jpg" alt="Cœur">
-<div class="theme-title">Cœur</div>
+<img src="coeur.jpg"><div class="theme-title">Cœur</div>
 </div>
 
 <div class="theme-card" onclick="location.href='cerveau.html'">
-<img src="cerveau.jpg" alt="Cerveau">
-<div class="theme-title">Cerveau</div>
+<img src="cerveau.jpg"><div class="theme-title">Cerveau</div>
 </div>
 
 <div class="theme-card" onclick="location.href='estomac.html'">
-<img src="estomac.jpg" alt="Estomac">
-<div class="theme-title">Estomac</div>
+<img src="estomac.jpg"><div class="theme-title">Estomac</div>
 </div>
 
 <div class="theme-card" onclick="location.href='foie.html'">
-<img src="foie.jpg" alt="Foie">
-<div class="theme-title">Foie</div>
+<img src="foie.jpg"><div class="theme-title">Foie</div>
 </div>
 
 <div class="theme-card" onclick="location.href='rate.html'">
-<img src="rate.jpg" alt="Rate">
-<div class="theme-title">Rate</div>
+<img src="rate.jpg"><div class="theme-title">Rate</div>
 </div>
 
 <div class="theme-card" onclick="location.href='pancreas.html'">
-<img src="pancreas.jpg" alt="Pancréas">
-<div class="theme-title">Pancréas</div>
+<img src="pancreas.jpg"><div class="theme-title">Pancréas</div>
 </div>
 
 </div>
 </div>
 </div>
 
-<!-- MEMBRES -->
-<div class="box" id="membres" onclick="toggle('contentMembres')">
+<div class="box" id="membres" onclick="toggle('membreContent')">
 Membres
-<div class="content" id="contentMembres">
-<p>
-PRIME est portée par un groupe d’étudiants motivés par la recherche médicale et le partage des connaissances :
-</p>
-<p>
+<div class="content" id="membreContent">
+PRIME est portée par des étudiants engagés :
+<br><br>
 Annadif Ahmat Aboubakar – EM3<br>
 Ousman Mahamat Albachir – EM3<br>
 Korom Saleh Mahamat – EM3<br>
@@ -283,7 +253,6 @@ Zakaria Mahamat Saleh – EM3<br>
 Mahmoud Zakaria – EM3<br>
 Mahamat Abdaraman Bachir – EM3<br>
 Bechir Mahamat Ankri – EM3
-</p>
 </div>
 </div>
 
